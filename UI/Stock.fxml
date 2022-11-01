@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<!--<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>-->
+
+<AnchorPane id="AnchorPane" fx:id="lblExpired" prefHeight="780.0" prefWidth="1376.0" styleClass="bg-color" stylesheets="@../css/supplier.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerOparations.StockController">
+   <children>
+      <Pane layoutX="50.0" layoutY="58.0" prefHeight="135.0" prefWidth="307.0" styleClass="pane_pharm" stylesheets="@../css/pharmacy.css">
+         <children>
+            <Text layoutX="14.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medicine">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <JFXTextField fx:id="tfmedicine" focusColor="WHITE" layoutX="102.0" layoutY="37.0" maxWidth="216.0" minWidth="174.0" onKeyPressed="#validatemed" prefHeight="45.0" prefWidth="191.0" promptText="Medicine Name">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXTextField>
+            <!--<FontAwesomeIcon fill="WHITE" iconName="SEARCH" layoutX="183.0" layoutY="99.0" size="2em" />-->
+         </children>
+      </Pane>
+      <Text layoutX="14.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Item" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="810.25390625">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Text>
+      <Pane layoutX="142.0" layoutY="33.0" prefHeight="2.0" prefWidth="1102.0" style="-fx-background-color: green;" AnchorPane.leftAnchor="142.0" AnchorPane.rightAnchor="0.0" />
+      <Text layoutX="14.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medicine/Drug Info" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="810.25390625">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Text>
+      <Pane layoutX="228.0" layoutY="245.0" prefHeight="2.0" prefWidth="1014.0" style="-fx-background-color: #FD6E6A;" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="0.0" />
+      <Group layoutX="402.0" layoutY="65.0" AnchorPane.leftAnchor="402.0">
+         <children>
+            <Pane onMouseClicked="#OutStock" prefHeight="128.0" prefWidth="174.0" styleClass="pane_pharm" stylesheets="@../css/pharmacy.css">
+               <padding>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </padding>
+               <children>
+                  <Group layoutX="35.0" layoutY="26.0">
+                     <children>
+                        <Group layoutY="2.576171875" stylesheets="@../css/pharmacy.css">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Out of stock">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Label fx:id="lblOutOfStock" layoutX="22.0" layoutY="7.84765625" prefHeight="61.0" prefWidth="74.0" text="00" textFill="#07136f">
+                                 <font>
+                                    <Font name="System Bold" size="64.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Group>
+                     </children>
+                  </Group>
+               </children>
+            </Pane>
+         </children>
+      </Group>
+      <Pane layoutX="1088.0" layoutY="58.0" onMouseClicked="#Expired1" prefHeight="135.0" prefWidth="174.0" styleClass="pane_pharm" stylesheets="@../css/pharmacy.css" AnchorPane.rightAnchor="83.0">
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+         <children>
+            <Group layoutX="52.0" layoutY="37.576171875" onMouseClicked="#Expired">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Expired">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="lablEpired" layoutX="5.0" layoutY="4.423828125" text="00" textFill="#d70606">
+                     <font>
+                        <Font name="System Bold" size="64.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Group>
+           
+                     </children>
+      </Pane>
+      <Pane layoutX="616.0" layoutY="58.0" onMouseClicked="#Expiresoon1" prefHeight="135.0" prefWidth="122.0" styleClass="pane_pharm" stylesheets="@../css/pharmacy.css" AnchorPane.leftAnchor="616.0" AnchorPane.rightAnchor="291.0">
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+         <children>
+            <Group layoutX="181.0" layoutY="8.576171875">
+               <children>
+                  <Group layoutY="-0.423828125">
+                     <children>
+                        <Group layoutY="23.576171875" onMouseClicked="#Expiresoon">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Soon Expired">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Label fx:id="lblExpSoon" layoutX="22.0" layoutY="11.271484375" prefHeight="93.0" prefWidth="74.0" text="00" textFill="#b29713">
+                                 <font>
+                                    <Font name="System Bold" size="64.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Group>
+                     </children>
+                  </Group>
+               </children>
+            </Group>
+         </children>
+      </Pane>
+      <Text layoutX="97.869140625" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Drug Batch No" AnchorPane.rightAnchor="1152.798828125">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="ftdrugName" focusColor="WHITE" labelFloat="true" layoutX="242.0" layoutY="355.0" maxWidth="216.0" minWidth="145.0" onKeyPressed="#validatedrugName" prefHeight="45.0" prefWidth="182.0" promptText="Medicine  Name" AnchorPane.rightAnchor="952.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <Text layoutX="724.23828125" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" AnchorPane.rightAnchor="610.048828125">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="tfprice" focusColor="WHITE" labelFloat="true" layoutX="865.0" layoutY="358.0" maxWidth="216.0" minWidth="89.0" onKeyPressed="#validatePrice" prefHeight="45.0" prefWidth="174.0" promptText="ksh 0.0" AnchorPane.rightAnchor="337.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <Text layoutX="431.248046875" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" AnchorPane.rightAnchor="870.8271484375">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="tfQuantity" focusColor="WHITE" labelFloat="true" layoutX="523.0" layoutY="359.0" maxWidth="216.0" minWidth="145.0" onKeyPressed="#validateQty" prefHeight="45.0" prefWidth="174.0" promptText="packets/dozen" AnchorPane.rightAnchor="679.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <Text layoutX="719.193359375" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Exp Date" AnchorPane.rightAnchor="581.4580078125">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="433.4296875" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier " AnchorPane.rightAnchor="867.1689453125">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="tfSupplier" focusColor="WHITE" labelFloat="true" layoutX="523.0" layoutY="278.0" maxWidth="216.0" minWidth="145.0" onKeyPressed="#validateSuplier" prefHeight="45.0" prefWidth="174.0" promptText="company name" AnchorPane.rightAnchor="679.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXDatePicker fx:id="tfExpDate" defaultColor="#fd6e6a" editable="false" layoutX="865.0" layoutY="286.0" prefHeight="31.0" prefWidth="182.0" promptText="Expire Date" AnchorPane.rightAnchor="329.0" />
+      <Pane layoutX="289.0" layoutY="706.0" prefHeight="55.0" prefWidth="122.0" styleClass="pane_pharm" stylesheets="@../css/pharmacy.css" AnchorPane.bottomAnchor="19.0">
+         <children>
+            <Button fx:id="btnAdd" layoutX="6.0" layoutY="8.0" mnemonicParsing="false" onAction="#Add_Medicine" prefHeight="39.0" prefWidth="110.0" stylesheets="@../css/stock.css" text="Add" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="btn_search" />
+                  <String fx:value="Button-pressed" />
+                  <String fx:value="Button-hover" />
+               </styleClass>
+            </Button>
+         </children></Pane>
+      <Pane layoutX="636.0" layoutY="711.0" prefHeight="55.0" prefWidth="122.0" styleClass="pane_pharm" stylesheets="@../css/pharmacy.css" AnchorPane.bottomAnchor="14.0">
+         <children>
+            <Button fx:id="btnUpdate" layoutX="6.0" layoutY="8.0" mnemonicParsing="false" onAction="#Update_Stock" prefHeight="39.0" prefWidth="110.0" stylesheets="@../css/stock.css" text="Update" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="btn_search" />
+                  <String fx:value="Button-hover" />
+                  <String fx:value="Button-pressed" />
+               </styleClass>
+            </Button>
+         </children></Pane>
+      <Pane layoutX="973.0" layoutY="707.0" prefHeight="55.0" prefWidth="112.0" styleClass="pane_pharm" stylesheets="@../css/pharmacy.css" AnchorPane.bottomAnchor="18.0">
+         <children>
+            <Button fx:id="btnDelete" layoutX="8.0" layoutY="8.0" mnemonicParsing="false" onAction="#Delete_Medicine" prefHeight="39.0" prefWidth="98.0" stylesheets="@../css/stock.css" text="Delete" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="btn_search" />
+                  <String fx:value="Button-hover" />
+                  <String fx:value="Button-pressed" />
+               </styleClass>
+            </Button>
+         </children></Pane>
+      <Pane layoutX="411.0" layoutY="725.0" prefHeight="2.0" prefWidth="226.0" style="-fx-background-color: #FD6E6A;" AnchorPane.bottomAnchor="43.0" />
+      <Pane layoutY="725.0" prefHeight="2.0" prefWidth="291.0" style="-fx-background-color: #FD6E6A;" AnchorPane.bottomAnchor="45.0" />
+      <Pane layoutX="6.0" layoutY="421.0" prefHeight="2.0" prefWidth="1255.0" style="-fx-background-color: #FD6E6A;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <TableView fx:id="Tablemed" fixedCellSize="0.0" layoutX="193.0" layoutY="441.0" onMouseClicked="#Display_data" prefHeight="247.0" prefWidth="1120.0" stylesheets="@../css/purchase.css" AnchorPane.leftAnchor="193.0">
+        <columns>
+            <TableColumn fx:id="colMdId" prefWidth="188.0" style="-fx-alignment: center;" text="Batch No." />
+          <TableColumn fx:id="colMdName" prefWidth="170.0" style="-fx-alignment: center;" text="Med Name" />
+          <TableColumn fx:id="colPrice" prefWidth="111.0" style="-fx-alignment: center;" text="Price" />
+            <TableColumn fx:id="colQuantity" prefWidth="162.0" resizable="false" style="-fx-alignment: center;" text="Med Quantity" />
+            <TableColumn fx:id="colShelfNo" prefWidth="135.0" resizable="false" style="-fx-alignment: center;" text="Med Category" />
+            <TableColumn fx:id="colCategory" prefWidth="123.0" resizable="false" style="-fx-alignment: center;" text="Shelf Number" />
+            <TableColumn fx:id="colSupplier" minWidth="0.0" prefWidth="103.0" resizable="false" style="-fx-alignment: center;" text="Supplier" />
+            <TableColumn fx:id="colExpDAte" prefWidth="156.0" resizable="false" style="-fx-alignment: center;" text="Exp.Date" />
+        </columns>
+      </TableView>
+      <Text layoutX="98.2060546875" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Drug Name" AnchorPane.rightAnchor="1180.2265625">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="ftdrugId" focusColor="WHITE" labelFloat="true" layoutX="241.0" layoutY="279.0" maxWidth="216.0" minWidth="131.0" onKeyPressed="#validatebtchNo" prefHeight="45.0" prefWidth="182.0" promptText="Medicine  Batch No." AnchorPane.rightAnchor="953.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <Pane layoutX="1085.0" layoutY="725.0" prefHeight="2.0" prefWidth="291.0" style="-fx-background-color: #FD6E6A;" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="1085.0" AnchorPane.rightAnchor="0.0" />
+      <Pane layoutX="757.0" layoutY="725.0" prefHeight="2.0" prefWidth="216.0" style="-fx-background-color: #FD6E6A;" AnchorPane.bottomAnchor="42.0" />
+      <JFXComboBox fx:id="ShelfNo" layoutX="1123.0" layoutY="289.0" onMouseClicked="#setShelf" prefHeight="25.0" prefWidth="182.0" promptText="Category" stylesheets="@../css/doctor.css" AnchorPane.rightAnchor="71.0">
+         <styleClass>
+            <String fx:value="cell" />
+            <String fx:value="combo-box" />
+         </styleClass></JFXComboBox>
+      <JFXComboBox fx:id="medCategory" layoutX="1119.0" layoutY="386.0" prefHeight="25.0" prefWidth="182.0" promptText="Shelf No" stylesheets="@../css/doctor.css" AnchorPane.rightAnchor="75.0">
+         <styleClass>
+            <String fx:value="cell" />
+            <String fx:value="combo-box" />
+         </styleClass></JFXComboBox>
+      <JFXComboBox fx:id="medcategory" layoutX="8.0" layoutY="472.0" onAction="#To_FilterDrugName" prefHeight="31.0" prefWidth="162.0" promptText="Medicine Names" stylesheets="@../css/doctor.css">
+         <styleClass>
+            <String fx:value="cell" />
+            <String fx:value="combo-box" />
+         </styleClass></JFXComboBox>
+      <Label layoutX="25.0" layoutY="441.0" text="Medicine Category.">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

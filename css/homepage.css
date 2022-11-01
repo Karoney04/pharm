@@ -1,0 +1,12 @@
+.bg-border-oane{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10px 10px  10px  10px;
+}
+.bg-headerpane{
+    -fx-background-color: #2e7d32;
+    -fx-background-radius: 0px 0px  0px  0px;
+}
+.button-home{
+    -fx-background-color: linear-gradient(to bottom right,#FD6E6A 16%,#FFC600 100%);
+    -fx-background-radius: 10px 10px  10px   10px;
+}

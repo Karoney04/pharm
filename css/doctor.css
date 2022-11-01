@@ -1,0 +1,15 @@
+.root{
+   -fx-background-radius: 10;
+    -fx-background-color: linear-gradient(to bottom right,#FD6E6A 16%,#FFC600 100%);
+    
+}
+.combo-box .cell {
+-fx-background-color: #FD6E6A;
+-fx-text-fill: black;
+-fx-background-radius: 5  5  0  0;
+-fx-font-size : 15px;
+  font-weight: bold;
+}
+.combo-box .cell:hover {
+-fx-background-color: #d81b60
+}

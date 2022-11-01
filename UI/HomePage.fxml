@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="841.0" prefWidth="1617.0" style="-fx-background-color: background-size: 110px 110px;background-position: 0px 0px,55px 55px;background-image: radial-gradient(50% 50% at 50% 50%, transparent 0%, transparent 75%, #B6CC66 76%, #B6CC66 85%, #EDFFDB 86%, #EDFFDB 94%, #FFFFFF 95%, #FFFFFF 103%, #D9E6A7 104%, #D9E6A7 112%, #798B3C 113%, #798B3C 121%, #FFFFFF 122%, #FFFFFF 130%, #E0EAD7 131%, #E0EAD7 140%),radial-gradient(50% 50% at 50% 50%, #FFFFFFFF 0%, #FFFFFFFF 75%, #B6CC66 76%, #EDFFDB 84%, #B6CC66 85%, #EDFFDB 94%, #FFFFFF 95%, #FFFFFF 103%, #D9E6A7 104%, #D9E6A7 112%, #798B3C 113%, #798B3C 121%, #FFFFFF 122%, #FFFFFF 130%, #E0EAD7 131%, #E0EAD7 140%);;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerOparations.HomePageController">
+   <center>
+      <HBox prefHeight="574.0" prefWidth="988.0" style="-fx-background-color: background-size: 110px 110px;background-position: 0px 0px,55px 55px;background-image: radial-gradient(50% 50% at 50% 50%, transparent 0%, transparent 75%, #B6CC66 76%, #B6CC66 85%, #EDFFDB 86%, #EDFFDB 94%, #FFFFFF 95%, #FFFFFF 103%, #D9E6A7 104%, #D9E6A7 112%, #798B3C 113%, #798B3C 121%, #FFFFFF 122%, #FFFFFF 130%, #E0EAD7 131%, #E0EAD7 140%),radial-gradient(50% 50% at 50% 50%, #FFFFFFFF 0%, #FFFFFFFF 75%, #B6CC66 76%, #EDFFDB 84%, #B6CC66 85%, #EDFFDB 94%, #FFFFFF 95%, #FFFFFF 103%, #D9E6A7 104%, #D9E6A7 112%, #798B3C 113%, #798B3C 121%, #FFFFFF 122%, #FFFFFF 130%, #E0EAD7 131%, #E0EAD7 140%);;" styleClass="bg-border-oane" stylesheets="@../css/homepage.css" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane fx:id="BorderPaneHome" prefHeight="831.0" prefWidth="1582.0" styleClass="bg-color" stylesheets="@../css/supplier.css" HBox.hgrow="ALWAYS">
+               <children>
+                  <AnchorPane prefHeight="35.0" prefWidth="988.0" style="-fx-background-color: #FD6E6A;" stylesheets="@../css/login.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <Label layoutX="705.0" layoutY="3.0" text=" " textAlignment="JUSTIFY" textFill="#fcfafa" AnchorPane.leftAnchor="705.0">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <Pane layoutX="331.0" layoutY="140.0" onMouseClicked="#Pharmacy" prefHeight="65.0" prefWidth="190.0" styleClass="button-home" stylesheets="@../css/homepage.css" AnchorPane.leftAnchor="331.0" AnchorPane.topAnchor="140.0">
+                     <children>
+                        <Button layoutX="73.0" layoutY="17.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="115.0" styleClass="button-home" stylesheets="@../css/homepage.css" text="PHARMACY" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <ImageView fitHeight="52.0" fitWidth="79.0" layoutX="16.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/icons8_department_50px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane layoutY="35.0" prefHeight="86.0" prefWidth="160.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="35.0" />
+                  <Pane layoutX="828.0" layoutY="35.0" prefHeight="86.0" prefWidth="192.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <Group layoutX="3.0">
+                           <children>
+                              <Text layoutX="56.0" layoutY="17.0" onMouseClicked="#ExitHomepage" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGOUT" />
+                              <ImageView fitHeight="34.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Icons/icons8_exit_50px_2.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Group>
+                        <Group layoutX="2.0" layoutY="34.0">
+                           <children>
+                              <Text layoutX="57.0" layoutY="18.05078125" onMouseClicked="#ChangePassword" strokeType="OUTSIDE" strokeWidth="0.0" text="CHANGE PASSWORD" wrappingWidth="113.314453125" />
+                              <ImageView fitHeight="34.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Icons/icons8_making_notes_50px_1.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Group>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="332.0" layoutY="277.0" onMouseClicked="#Category" prefHeight="62.0" prefWidth="188.0" styleClass="button-home" stylesheets="@../css/homepage.css">
+                     <children>
+                        <Button layoutX="83.0" layoutY="16.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" styleClass="button-home" stylesheets="@../css/homepage.css" text="CATEGORY" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <ImageView fitHeight="52.0" fitWidth="79.0" layoutX="12.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/icons8_sorting_50px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="1125.0" layoutY="140.0" onMouseClicked="#tostockfc" prefHeight="73.0" prefWidth="189.0" styleClass="button-home" stylesheets="@../css/homepage.css" AnchorPane.rightAnchor="303.0">
+                     <children>
+                        <Button layoutX="88.0" layoutY="18.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="79.0" styleClass="button-home" stylesheets="@../css/homepage.css" text="STOCK" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <ImageView fitHeight="68.0" fitWidth="75.0" layoutX="23.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/icons8_big_parcel_50px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Group layoutX="1126.0" layoutY="350.0" AnchorPane.rightAnchor="303.0">
+                     <children>
+                        <Pane layoutY="-79.0" onMouseClicked="#User" prefHeight="72.0" prefWidth="188.0" styleClass="button-home" stylesheets="@../css/homepage.css">
+                           <children>
+                              <Group layoutX="32.0" layoutY="7.0">
+                                 <children>
+                                    <Button layoutX="47.0" layoutY="11.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="98.0" styleClass="button-home" stylesheets="@../css/homepage.css" text="ADD USER" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <ImageView fitHeight="48.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Icons/icons8_customer_50px.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </Group>
+                          
+                                       </children>
+                        </Pane>
+                     </children>
+                  </Group>
+                  <Pane layoutX="47.0" layoutY="120.0" onMouseClicked="#Purchase" prefHeight="104.0" prefWidth="221.0" styleClass="button-home" stylesheets="@../css/homepage.css" AnchorPane.leftAnchor="47.0">
+                     <children>
+                        <ImageView fitHeight="62.0" fitWidth="79.0" layoutX="68.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" styleClass="button-home">
+                           <image>
+                              <Image url="@../Icons/icons8_shopping_cart_50px.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="40.0" layoutY="60.0" text="PURCHASE" textFill="#f8f8f8">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                 
+                  <Pane layoutX="1347.0" layoutY="120.0" onMouseClicked="#Supplier" prefHeight="109.0" prefWidth="241.0" styleClass="button-home" stylesheets="@../css/homepage.css" AnchorPane.rightAnchor="29.0">
+                     <children>
+                      
+                                    <Label layoutX="64.0" layoutY="64.0" text="SUPLLIER" textFill="#f8f8f8">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="48.0" fitWidth="54.0" layoutX="98.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/icons8_customer_50px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="45.0" layoutY="249.0" onMouseClicked="#Sales" prefHeight="108.0" prefWidth="221.0" styleClass="button-home" stylesheets="@../css/homepage.css" AnchorPane.leftAnchor="45.0">
+                     <children>
+                        <ImageView fitHeight="79.0" fitWidth="102.0" layoutX="62.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/icons8_total_sales_50px.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="65.0" layoutY="64.0" text="SALES" textFill="#f8f8f8">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="551.0" layoutY="176.0" prefHeight="133.0" prefWidth="230.0" styleClass="button-home" stylesheets="@../css/homepage.css" AnchorPane.leftAnchor="551.0" AnchorPane.rightAnchor="519.0" />
+                  <Pane layoutX="1345.0" layoutY="256.0" onMouseClicked="#Patient" prefHeight="108.0" prefWidth="241.0" styleClass="button-home" stylesheets="@../css/homepage.css" AnchorPane.rightAnchor="31.0">
+                     <children>
+                      
+                                    <Label layoutX="73.0" layoutY="66.0" text="PATIENT" textFill="#f8f5f5">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="63.0" fitWidth="109.0" layoutX="83.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/icons8_conference_50px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane layoutY="109.0" prefHeight="2.0" prefWidth="1300.0" style="-fx-background-color: #FD6E6A;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Pane layoutY="385.0" prefHeight="2.0" prefWidth="1625.0" style="-fx-background-color: #FD6E6A;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <BarChart fx:id="barchart" layoutX="-3.0" layoutY="390.0" prefHeight="224.0" prefWidth="1617.0" styleClass="bg-color" stylesheets="@../css/patient%20doctor.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </center>
+   <bottom>
+      <AreaChart fx:id="areaChart" prefHeight="271.0" prefWidth="1617.0" stylesheets="@../css/patient%20doctor.css" BorderPane.alignment="CENTER">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+         <styleClass>
+            <String fx:value="chart" />
+            <String fx:value="chart-plot-background" />
+            <String fx:value="chart1" />
+         </styleClass>
+      </AreaChart>
+   </bottom>
+</BorderPane>

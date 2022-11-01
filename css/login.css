@@ -1,0 +1,35 @@
+.linear-grad2{
+   -fx-background-color:linear-gradient(to top left, #663300 0%, #6600ff 100%);
+}
+.glass-effect{
+background: rgba(19, 220, 28, 0.44);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(19, 220, 28, 0.14);
+}
+.root{
+     -fx-background-color: white;
+    
+}
+.Button-hover:hover{
+  -fx-font-weight:bold;
+  -fx-background-color: burlywood;
+  -fx-background-radius: 10px 10px  10px   10px;
+  -fx-font-size: 18;
+  -fx-text-fill: #000000;
+  -fx-border-color: #000000;
+  -fx-border-radius: 10px 10px  10px   10px;
+  -fx-border-width: 3;
+}
+.Button-pressed:pressed{
+  -fx-font-weight:bold;
+  -fx-background-color: yellow;
+  -fx-background-radius: 10px 10px  10px   10px;
+  -fx-font-size: 18;
+  -fx-border-color: green;
+  -fx-border-radius: 10px 10px  10px   10px;
+  -fx-border-width: 3;
+    
+}
+

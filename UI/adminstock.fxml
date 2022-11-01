@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="lblExpired" onKeyPressed="#medvalidate" prefHeight="780.0" prefWidth="1376.0" styleClass="bg-color" stylesheets="@../css/supplier.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerOparations.adminstock">
+   <children>
+      <Pane layoutX="50.0" layoutY="58.0" prefHeight="135.0" prefWidth="307.0" styleClass="pane_stock" stylesheets="@../css/stock.css">
+         <children>
+            <Text layoutX="14.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medicine">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <JFXTextField fx:id="tfmedicine" focusColor="WHITE" layoutX="102.0" layoutY="37.0" maxWidth="216.0" minWidth="174.0" onKeyPressed="#medicineVali" prefHeight="45.0" prefWidth="191.0" promptText="Medicine Name">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXTextField>
+         </children>
+      </Pane>
+      <Text layoutX="14.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Item" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="810.25390625">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Text>
+      <Pane layoutX="142.0" layoutY="33.0" prefHeight="2.0" prefWidth="1102.0" style="-fx-background-color: #EECE13;" AnchorPane.leftAnchor="142.0" AnchorPane.rightAnchor="0.0" />
+      <Text layoutX="14.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medicine/Drug Info" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="810.25390625">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Text>
+      <Pane layoutX="228.0" layoutY="245.0" prefHeight="2.0" prefWidth="1014.0" style="-fx-background-color: #EECE13;" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="0.0" />
+      <Group layoutX="402.0" layoutY="65.0" AnchorPane.leftAnchor="402.0">
+         <children>
+            <Pane onMouseClicked="#OutStock" prefHeight="128.0" prefWidth="174.0" styleClass="pane_stock" stylesheets="@../css/stock.css">
+               <padding>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </padding>
+               <children>
+                  <Group layoutX="35.0" layoutY="26.0">
+                     <children>
+                        <Group layoutY="2.576171875">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Out of stock">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Label fx:id="lblOutOfStock" layoutX="22.0" layoutY="7.84765625" prefHeight="61.0" prefWidth="74.0" text="00" textFill="#07136f">
+                                 <font>
+                                    <Font name="System Bold" size="64.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Group>
+                     </children>
+                  </Group>
+               </children>
+            </Pane>
+         </children>
+      </Group>
+      <Pane layoutX="1088.0" layoutY="58.0" onMouseClicked="#Expired1" prefHeight="135.0" prefWidth="174.0" styleClass="pane_stock" stylesheets="@../css/stock.css" AnchorPane.rightAnchor="83.0">
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+         <children>
+            <Group layoutX="52.0" layoutY="37.576171875" onMouseClicked="#Expired">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Expired">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="lablEpired" layoutX="5.0" layoutY="4.423828125" text="00" textFill="#d70606">
+                     <font>
+                        <Font name="System Bold" size="64.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Group>
+         </children>
+      </Pane>
+      <Pane layoutX="616.0" layoutY="58.0" onMouseClicked="#Expiresoon1" prefHeight="135.0" prefWidth="122.0" styleClass="pane_stock" stylesheets="@../css/stock.css" AnchorPane.leftAnchor="616.0" AnchorPane.rightAnchor="291.0">
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+         <children>
+            <Group layoutX="181.0" layoutY="8.576171875">
+               <children>
+                  <Group layoutY="-0.423828125">
+                     <children>
+                        <Group layoutY="23.576171875" onMouseClicked="#Expiresoon">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Soon Expired">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Label fx:id="lblExpSoon" layoutX="22.0" layoutY="11.271484375" prefHeight="93.0" prefWidth="74.0" text="00" textFill="#b29713">
+                                 <font>
+                                    <Font name="System Bold" size="64.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Group>
+                     </children>
+                  </Group>
+               </children>
+            </Group>
+         </children>
+      </Pane>
+      <Text layoutX="99.923828125" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Drug Batch No" AnchorPane.rightAnchor="1150.744140625">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="ftdrugName" focusColor="WHITE" labelFloat="true" layoutX="242.0" layoutY="332.0" maxWidth="216.0" minWidth="145.0" onKeyPressed="#DrugName" prefHeight="45.0" prefWidth="182.0" promptText="Medicine  Name" AnchorPane.rightAnchor="952.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <Text layoutX="722.802734375" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" AnchorPane.rightAnchor="611.484375">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="tfprice" focusColor="WHITE" labelFloat="true" layoutX="862.0" layoutY="344.0" maxWidth="216.0" minWidth="89.0" onKeyPressed="#price" prefHeight="45.0" prefWidth="174.0" promptText="ksh 0.0" stylesheets="@../css/doctor.css" AnchorPane.rightAnchor="340.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <styleClass>
+            <String fx:value="cell" />
+            <String fx:value="combo-box" />
+         </styleClass>
+      </JFXTextField>
+      <Text layoutX="430.8720703125" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" AnchorPane.rightAnchor="871.203125">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="tfQuantity" focusColor="WHITE" labelFloat="true" layoutX="523.0" layoutY="336.0" maxWidth="216.0" minWidth="145.0" onKeyPressed="#qty" prefHeight="45.0" prefWidth="174.0" promptText="packets/dozen" AnchorPane.rightAnchor="679.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <Text layoutX="724.037109375" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Exp Date" AnchorPane.rightAnchor="576.6142578125">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="432.1708984375" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier " AnchorPane.rightAnchor="868.427734375">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="tfSupplier" focusColor="WHITE" labelFloat="true" layoutX="420.6240234375" layoutY="262.0" maxWidth="216.0" minWidth="145.0" onKeyPressed="#Supplier" prefHeight="45.0" prefWidth="174.0" promptText="company name" AnchorPane.rightAnchor="679.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXDatePicker fx:id="tfExpDate" defaultColor="#fdd819" editable="false" layoutX="762.6240234375" layoutY="270.0" prefHeight="31.0" prefWidth="182.0" promptText="Expire Date" AnchorPane.rightAnchor="329.0">
+         <styleClass>
+            <String fx:value="combo-box" />
+            <String fx:value="cell" />
+         </styleClass></JFXDatePicker>
+      <Pane layoutX="477.0" layoutY="709.0" prefHeight="55.0" prefWidth="122.0" styleClass="pane_stock" stylesheets="@../css/stock.css" AnchorPane.bottomAnchor="16.0">
+         <children>
+            <Button fx:id="btnUpdate" layoutX="6.0" layoutY="8.0" mnemonicParsing="false" onAction="#Update_Stock" prefHeight="39.0" prefWidth="110.0" stylesheets="@../css/stock.css" text="Update" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="btn_search" />
+                  <String fx:value="Button-hover" />
+                  <String fx:value="Button-pressed" />
+               </styleClass>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="800.0" layoutY="708.0" prefHeight="55.0" prefWidth="112.0" styleClass="pane_stock" stylesheets="@../css/stock.css" AnchorPane.bottomAnchor="17.0">
+         <children>
+            <Button fx:id="btnDelete" layoutX="8.0" layoutY="8.0" mnemonicParsing="false" onAction="#Delete_Medicine" prefHeight="39.0" prefWidth="98.0" stylesheets="@../css/stock.css" text="Delete" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="btn_search" />
+                  <String fx:value="Button-hover" />
+                  <String fx:value="Button-pressed" />
+               </styleClass>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="281.0" layoutY="737.0" prefHeight="2.0" prefWidth="198.0" style="-fx-background-color: #EECE13;" AnchorPane.bottomAnchor="41.0" />
+      <Pane layoutX="161.0" layoutY="709.0" prefHeight="55.0" prefWidth="122.0" styleClass="pane_stock" stylesheets="@../css/stock.css">
+         <children>
+            <Button fx:id="btnAdd" layoutX="6.0" layoutY="8.0" mnemonicParsing="false" onAction="#Add_Medicine" prefHeight="39.0" prefWidth="110.0" stylesheets="@../css/stock.css" text="Add" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="btn_search" />
+                  <String fx:value="Button-pressed" />
+                  <String fx:value="Button-hover" />
+               </styleClass>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="6.0" layoutY="421.0" prefHeight="2.0" prefWidth="1255.0" style="-fx-background-color: #EECE13;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <TableView fx:id="Tablemed" fixedCellSize="0.0" layoutX="193.0" layoutY="441.0" onMouseClicked="#Display_data1" prefHeight="247.0" prefWidth="1120.0" stylesheets="@../css/purchase.css" AnchorPane.leftAnchor="193.0">
+         <columns>
+            <TableColumn fx:id="colMdId" prefWidth="188.0" style="-fx-alignment: center;" text="Batch No." />
+            <TableColumn fx:id="colMdName" prefWidth="170.0" style="-fx-alignment: center;" text="Med Name" />
+            <TableColumn fx:id="colPrice" prefWidth="111.0" style="-fx-alignment: center;" text="Price" />
+            <TableColumn fx:id="colQuantity" prefWidth="162.0" resizable="false" style="-fx-alignment: center;" text="Med Quantity" />
+            <TableColumn fx:id="colShelfNo" prefWidth="135.0" resizable="false" style="-fx-alignment: center;" text="Med Category" />
+            <TableColumn fx:id="colCategory" prefWidth="123.0" resizable="false" style="-fx-alignment: center;" text="Shelf Number" />
+            <TableColumn fx:id="colSupplier" minWidth="0.0" prefWidth="103.0" resizable="false" style="-fx-alignment: center;" text="Supplier" />
+            <TableColumn fx:id="colExpDAte" prefWidth="156.0" resizable="false" style="-fx-alignment: center;" text="Exp.Date" />
+         </columns>
+      </TableView>
+      <Text layoutX="96.04296875" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Drug Name" AnchorPane.rightAnchor="1182.3896484375">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="ftdrugId" focusColor="WHITE" labelFloat="true" layoutX="251.0" layoutY="263.0" maxWidth="216.0" minWidth="131.0" onKeyPressed="#batchNo" prefHeight="45.0" prefWidth="182.0" promptText="Medicine  Batch No." AnchorPane.rightAnchor="953.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <Pane layoutX="1241.0" layoutY="735.0" prefHeight="2.0" prefWidth="135.0" style="-fx-background-color: #EECE13;" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="1241.0" AnchorPane.rightAnchor="0.0" />
+      <Pane layoutX="597.0" layoutY="727.0" prefHeight="2.0" prefWidth="205.0" style="-fx-background-color: #EECE13;" AnchorPane.bottomAnchor="38.0" />
+      <JFXComboBox fx:id="ShelfNo" layoutX="1020.6240234375" layoutY="273.0" prefHeight="25.0" prefWidth="182.0" promptText="Category" stylesheets="@../css/doctor.css" AnchorPane.rightAnchor="71.0">
+         <styleClass>
+            <String fx:value="cell" />
+            <String fx:value="combo-box" />
+         </styleClass></JFXComboBox>
+      <JFXComboBox fx:id="medCategory" layoutX="1119.0" layoutY="363.0" prefHeight="25.0" prefWidth="182.0" promptText="Shelf No" stylesheets="@../css/doctor.css" AnchorPane.rightAnchor="75.0">
+         <styleClass>
+            <String fx:value="combo-box" />
+            <String fx:value="cell" />
+         </styleClass></JFXComboBox>
+      <JFXComboBox fx:id="medcategory" layoutX="25.0" layoutY="472.0" onAction="#To_FilterDrugName" prefHeight="31.0" prefWidth="145.0" promptText="Medicine Names" stylesheets="@../css/doctor.css">
+         <styleClass>
+            <String fx:value="cell" />
+            <String fx:value="combo-box" />
+         </styleClass></JFXComboBox>
+      <Label layoutX="25.0" layoutY="441.0" text="Medicine Category.">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Pane layoutX="1132.0" layoutY="707.0" prefHeight="55.0" prefWidth="112.0" styleClass="pane_stock" stylesheets="@../css/stock.css">
+         <children>
+            <Button fx:id="btnclose" layoutX="8.0" layoutY="8.0" mnemonicParsing="false" onAction="#closePane" prefHeight="39.0" prefWidth="98.0" stylesheets="@../css/stock.css" text="Close" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="btn_search" />
+                  <String fx:value="Button-hover" />
+                  <String fx:value="Button-pressed" />
+               </styleClass>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="912.0" layoutY="738.0" prefHeight="2.0" prefWidth="223.0" style="-fx-background-color: #EECE13;" />
+      <Pane layoutX="-3.0" layoutY="737.0" prefHeight="2.0" prefWidth="164.0" style="-fx-background-color: #EECE13;" AnchorPane.leftAnchor="0.0" />
+   </children>
+</AnchorPane>

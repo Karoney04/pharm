@@ -1,0 +1,13 @@
+.bg-pane{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 0px 0px  0px  0px;
+}
+.pane_stock{
+    -fx-background-color: #2e7d32;
+    -fx-background-radius: 10px 10px  10px   10px;
+}
+.btn_search{
+    -fx-background-color: #000000;
+    font-size: 15px;
+    -fx-background-radius: 10px 10px  10px   10px;
+}

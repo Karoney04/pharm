@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import java.lang.String?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="792.0" prefWidth="1346.0" styleClass="root" stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerOparations.SalesController">
+   <children>
+      <Label layoutX="579.0" layoutY="20.0" text="SALES REPORT">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="67.0" layoutY="104.0" text="From :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="490.0" layoutY="103.0" text="To :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <PieChart layoutX="858.0" layoutY="383.0" prefHeight="177.0" prefWidth="207.0" />
+      <Pane layoutX="1.0" layoutY="62.0" prefHeight="3.0" prefWidth="1322.0" style="-fx-background-color: green;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <JFXDatePicker fx:id="tfDateTo" defaultColor="#0cf50c" editable="false" layoutX="539.0" layoutY="98.0" prefHeight="25.0" prefWidth="198.0" />
+      <JFXDatePicker fx:id="tfDateFrom" defaultColor="#08d308" editable="false" layoutX="153.0" layoutY="89.0" prefHeight="31.0" prefWidth="198.0" />
+      <Label layoutX="26.0" layoutY="731.0" text="Paid Amount">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="paidAmount" layoutX="180.0" layoutY="727.0" text="ksh">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <Label layoutX="285.0" layoutY="728.0" text="Unpaid Amount">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="unapaidAmount" layoutX="429.0" layoutY="727.0" text="ksh">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <BarChart fx:id="salesdisplay" alternativeRowFillVisible="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="530.0" layoutY="168.0" prefHeight="591.0" prefWidth="792.0" styleClass="chart-plot-background" stylesheets="@../css/patient%20doctor.css" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <TableView fx:id="sales" layoutX="39.0" layoutY="183.0" prefHeight="532.0" prefWidth="480.0" stylesheets="@../css/purchase.css">
+        <columns>
+          <TableColumn fx:id="drugname" prefWidth="119.0" text="Product Name" />
+          <TableColumn fx:id="drugqty" prefWidth="121.0" text="Quantity" />
+            <TableColumn fx:id="drugprice" prefWidth="104.0" text="Price" />
+            <TableColumn fx:id="drugtotalAmount" prefWidth="136.0" text="Total Amount" />
+        </columns>
+      </TableView>
+      <Pane layoutX="1220.0" layoutY="82.0" prefHeight="55.0" prefWidth="61.0" style="-fx-background-color: green;" styleClass="btn-report" stylesheets="@../css/stock2.css">
+         <children>
+            <ImageView fitHeight="49.0" fitWidth="99.0" layoutX="5.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/refresh_26px.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="912.0" layoutY="81.0" prefHeight="55.0" prefWidth="163.0" style="-fx-background-color: green;" styleClass="btn-report" stylesheets="@../css/stock2.css">
+         <children>
+            <Button fx:id="ShowReport" layoutX="8.0" layoutY="6.0" mnemonicParsing="false" onAction="#ShowReport" prefHeight="42.0" prefWidth="149.0" stylesheets="@../css/pharmacy.css" text="Show Report" textFill="#e819d6">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="btn_action_1" />
+                  <String fx:value="Button-hover" />
+                  <String fx:value="Button-pressed" />
+               </styleClass>
+            </Button>
+         </children>
+      </Pane>
+      <Label layoutX="1247.0" layoutY="6.0" onMouseClicked="#ClosePane" text="Close" textFill="#f20909">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

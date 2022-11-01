@@ -1,0 +1,32 @@
+.bg{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 0px 0px  0px  0px;
+}
+.btn-report{
+     -fx-background-color: linear-gradient(to bottom right,#FD6E6A 16%,#FFC600 100%);
+    font-size: 15px;
+    -fx-background-radius: 10px 10px  10px   10px;
+}
+.pane-report{
+    -fx-background-color: #2e7d32;
+    -fx-background-radius: 10px 10px  10px   10px;
+}
+.Button-hover:hover{
+  -fx-font-weight:bold;
+  -fx-background-color: burlywood;
+  -fx-background-radius: 10px 10px  10px   10px;
+  -fx-font-size: 18;
+  -fx-text-fill: #000000;
+  -fx-border-color: #000000;
+  -fx-border-radius: 10px 10px  10px   10px;
+  -fx-border-width: 3;
+}
+.Button-pressed:pressed{
+  -fx-font-weight:bold;
+  -fx-background-color: yellow;
+  -fx-background-radius: 10px 10px  10px   10px;
+  -fx-font-size: 18;
+  -fx-border-color: green;
+  -fx-border-radius: 10px 10px  10px   10px;
+  -fx-border-width: 3;
+}

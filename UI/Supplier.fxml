@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="SupplierPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="654.0" prefWidth="935.0" styleClass="root" stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerOparations.SupplierController">
+   <children>
+      <Pane layoutY="59.0" prefHeight="3.0" prefWidth="935.0" style="-fx-background-color: #EECE13;" stylesheets="@../css/pharmacy.css" />
+      <Label layoutX="282.0" layoutY="10.0" text="SUPPLIER INFORMATION">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="22.0" layoutY="96.0" text="Company Reg No">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="163.0" text="Name">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="22.0" layoutY="225.0" text="Product">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="tfCompNo" focusColor="WHITE" labelFloat="true" layoutX="193.0" layoutY="91.0" maxWidth="187.0" minWidth="179.0" prefHeight="31.0" prefWidth="187.0" promptText="12344/N1432MN">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="tfCompName" focusColor="WHITE" labelFloat="true" layoutX="193.0" layoutY="156.0" maxWidth="187.0" minWidth="179.0" onKeyPressed="#validatecopname" prefHeight="31.0" prefWidth="187.0" promptText="ALSITA">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="tfProduct" focusColor="WHITE" labelFloat="true" layoutX="191.0" layoutY="218.0" maxWidth="194.0" minWidth="175.0" onKeyPressed="#validatepro" prefHeight="31.0" prefWidth="187.0" promptText="Panadol,hedex">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <Label layoutX="497.0" layoutY="95.0" text="Quanity">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="499.0" layoutY="162.0" text="Order ID">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="497.0" layoutY="224.0" text="Total Cost">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="tfQuanity" focusColor="WHITE" labelFloat="true" layoutX="639.0" layoutY="90.0" maxWidth="187.0" minWidth="179.0" prefHeight="31.0" prefWidth="187.0" promptText="Package">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="tfOrder" focusColor="WHITE" labelFloat="true" layoutX="638.0" layoutY="155.0" maxWidth="187.0" minWidth="179.0" onKeyPressed="#validateorderid" prefHeight="31.0" prefWidth="187.0" promptText="12345678">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="tfCost" focusColor="WHITE" labelFloat="true" layoutX="638.0" layoutY="217.0" maxWidth="194.0" minWidth="175.0" onKeyPressed="#validatetotalcost" prefHeight="31.0" prefWidth="187.0" promptText="ksh 1000/=">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <TableView fx:id="tableSupplier" layoutX="31.0" layoutY="270.0" onMouseClicked="#Display_Data" prefHeight="257.0" prefWidth="880.0" stylesheets="@../css/purchase.css">
+        <columns>
+          <TableColumn fx:id="calRegNo" prefWidth="110.0" style="-fx-alignment: center;" text="Camp RegNo" />
+          <TableColumn fx:id="colName" prefWidth="113.0" style="-fx-alignment: center;" text="Company Name" />
+            <TableColumn fx:id="colProduct" prefWidth="147.0" style="-fx-alignment: center;" text="Products" />
+            <TableColumn fx:id="colQuantity" prefWidth="117.0" style="-fx-alignment: center;" text="Quantity" />
+            <TableColumn fx:id="colOrder" prefWidth="153.0" style="-fx-alignment: center;" text="Order ID" />
+            <TableColumn fx:id="colTotalcost" prefWidth="149.0" style="-fx-alignment: center;" text="Total Cost" />
+        </columns>
+      </TableView>
+      <Pane layoutX="121.0" layoutY="546.0" prefHeight="57.0" prefWidth="114.0" styleClass="pane_pharm" stylesheets="@../css/pharmacy.css">
+         <children>
+            <Button fx:id="btnadd" layoutX="8.0" layoutY="8.0" mnemonicParsing="false" onAction="#Add_Supplier" prefHeight="41.0" prefWidth="96.0" stylesheets="@../css/pharmacy.css" text="Add" textFill="#fcf9f9">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="Button-hover" />
+                  <String fx:value="Button-pressed" />
+                  <String fx:value="btn_action_1" />
+               </styleClass>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="389.0" layoutY="547.0" prefHeight="57.0" prefWidth="114.0" styleClass="pane_pharm" stylesheets="@../css/pharmacy.css">
+         <children>
+            <Button fx:id="btnupdate" layoutX="10.0" layoutY="8.0" mnemonicParsing="false" onAction="#Update_suplier" prefHeight="41.0" prefWidth="96.0" stylesheets="@../css/pharmacy.css" text="Update" textFill="#fcf9f9">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="Button-hover" />
+                  <String fx:value="Button-pressed" />
+                  <String fx:value="btn_action_1" />
+               </styleClass>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="657.0" layoutY="546.0" prefHeight="57.0" prefWidth="106.0" styleClass="pane_pharm" stylesheets="@../css/pharmacy.css">
+         <children>
+            <Button fx:id="btndelete" layoutX="9.0" layoutY="7.0" mnemonicParsing="false" onAction="#Delete_Supplier" prefHeight="41.0" prefWidth="89.0" stylesheets="@../css/pharmacy.css" text="Delete" textFill="#fcf9f9">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="Button-hover" />
+                  <String fx:value="Button-pressed" />
+                  <String fx:value="btn_action_1" />
+               </styleClass>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="-1.0" layoutY="577.0" prefHeight="2.0" prefWidth="125.0" style="-fx-background-color: #EECE13;" stylesheets="@../css/pharmacy.css" />
+      <Pane layoutX="758.0" layoutY="576.0" prefHeight="2.0" prefWidth="177.0" style="-fx-background-color: #EECE13;" stylesheets="@../css/pharmacy.css" />
+      <Pane layoutX="504.0" layoutY="575.0" prefHeight="2.0" prefWidth="154.0" style="-fx-background-color: #EECE13;" stylesheets="@../css/pharmacy.css" />
+      <Pane layoutX="234.0" layoutY="576.0" prefHeight="2.0" prefWidth="154.0" style="-fx-background-color: #EECE13;" stylesheets="@../css/pharmacy.css" />
+      <Label layoutX="872.0" layoutY="19.0" onMouseClicked="#Close_Page" stylesheets="@../css/pharmacy.css" text="Close" textFill="#f20f0f">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <styleClass>
+            <String fx:value="Button-pressed" />
+            <String fx:value="Button-hover" />
+         </styleClass>
+      </Label>
+      
+   </children>
+</Pane>

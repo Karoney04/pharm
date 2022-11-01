@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="837.0" prefWidth="1644.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerOparations.PharmacyController">
+   <left>
+      <BorderPane fx:id="borderPane2" prefHeight="803.0" prefWidth="1716.0" BorderPane.alignment="CENTER">
+         <center>
+            <VBox prefHeight="803.0" prefWidth="1282.0">
+               <children>
+                  <AnchorPane fx:id="pane2" prefHeight="803.0" prefWidth="1447.0" styleClass="bg-color" stylesheets="@../css/supplier.css" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Text layoutX="2.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medicine  Details" textAlignment="JUSTIFY" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="1250.681640625">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Pane layoutX="160.0" layoutY="38.0" prefHeight="2.0" prefWidth="1235.0" style="-fx-background-color: green;" AnchorPane.rightAnchor="0.0" />
+                        <Label layoutX="28.0" layoutY="258.0" prefHeight="27.0" prefWidth="132.0" text="Id/Birth_cert_No" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="1206.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="30.0" layoutY="329.0" prefHeight="27.0" prefWidth="114.0" text="Patient Name" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="1222.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="tfpntNo" focusColor="WHITE" labelFloat="true" layoutX="162.0" layoutY="244.0" maxWidth="254.0" minWidth="141.0" onKeyPressed="#validateid" prefHeight="45.0" prefWidth="254.0" promptText="Id/Bitrth cert_no" AnchorPane.leftAnchor="162.0" AnchorPane.rightAnchor="950.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="tfpntName" focusColor="WHITE" labelFloat="true" layoutX="151.0" layoutY="317.0" maxWidth="238.0" minWidth="141.0" onKeyPressed="#validateName" prefHeight="45.0" prefWidth="238.0" promptText="First Name" AnchorPane.leftAnchor="151.0" AnchorPane.rightAnchor="952.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXTextField>
+                        <Label layoutX="456.0" layoutY="258.0" prefHeight="27.0" prefWidth="94.0" text="Phone No" AnchorPane.leftAnchor="456.0" AnchorPane.rightAnchor="816.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="tfpntPhoneNo" focusColor="WHITE" labelFloat="true" layoutX="570.0" layoutY="247.0" maxWidth="270.0" minWidth="141.0" onKeyPressed="#valdatephone" prefHeight="45.0" prefWidth="198.0" promptText="Phone number">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXTextField>
+                        <Label layoutX="833.0" layoutY="229.0" prefHeight="27.0" prefWidth="145.0" text="Patient Complain" AnchorPane.leftAnchor="833.0" AnchorPane.rightAnchor="363.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXTextArea fx:id="pntComplain" focusColor="WHITE" layoutX="987.0" layoutY="227.0" maxWidth="322.0" minWidth="188.0" onKeyReleased="#validateCondition" prefHeight="162.0" prefWidth="296.0" promptText="Patient  Condition" AnchorPane.leftAnchor="987.0" AnchorPane.rightAnchor="83.0">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></JFXTextArea>
+                        <Pane layoutX="362.0" layoutY="804.0" prefHeight="2.0" prefWidth="154.0" style="-fx-background-color: green;" AnchorPane.leftAnchor="362.0" AnchorPane.rightAnchor="843.0" />
+                        <Pane layoutY="391.0" prefHeight="2.0" prefWidth="1367.0" style="-fx-background-color: green;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                        <TableView fx:id="Tablemed" layoutX="560.0" layoutY="58.0" onMouseClicked="#Add_to_list" onMousePressed="#AddToList" prefHeight="149.0" prefWidth="705.0" stylesheets="@../css/purchase.css" AnchorPane.leftAnchor="560.0" AnchorPane.rightAnchor="101.0">
+                           <columns>
+                              <TableColumn fx:id="colBatch" prefWidth="190.0" style="-fx-alignment: center;" text="Drug Batch" />
+                              <TableColumn fx:id="colMdName" prefWidth="158.0" style="-fx-alignment: center;" text="Drug Name" />
+                              <TableColumn fx:id="colLocation" prefWidth="116.0" style="-fx-alignment: center;" text="shelf No" />
+                              <TableColumn fx:id="colExpDate" minWidth="0.0" prefWidth="161.0" style="-fx-alignment: center;" text="Exp Date" />
+                              <TableColumn fx:id="colPrice" minWidth="0.0" prefWidth="78.0" style="-fx-alignment: center;" text="Price/Cost" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <Label layoutX="952.0" layoutY="440.0" prefHeight="27.0" prefWidth="89.0" text="Total Cost" AnchorPane.leftAnchor="952.0" AnchorPane.rightAnchor="327.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="956.0" layoutY="507.0" prefHeight="27.0" prefWidth="104.0" text="Pay Amount" AnchorPane.leftAnchor="956.0" AnchorPane.rightAnchor="308.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="956.0" layoutY="573.0" prefHeight="27.0" prefWidth="66.0" text="Balance " AnchorPane.leftAnchor="956.0" AnchorPane.rightAnchor="319.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="tfTotalPaidAmount" alignment="BOTTOM_RIGHT" focusColor="WHITE" labelFloat="true" layoutX="1078.0" layoutY="485.0" maxWidth="199.0" minWidth="81.0" onKeyPressed="#validatePaidAmount" prefHeight="45.0" prefWidth="131.0" promptText="ksh 0.0" AnchorPane.leftAnchor="1078.0" AnchorPane.rightAnchor="157.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="tfUnpaidAmount" alignment="BOTTOM_RIGHT" editable="false" focusColor="WHITE" labelFloat="true" layoutX="1083.0" layoutY="547.0" maxWidth="188.0" minWidth="79.0" prefHeight="45.0" prefWidth="129.0" promptText="ksh 0.0" AnchorPane.leftAnchor="1083.0" AnchorPane.rightAnchor="154.0">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXTextField>
+                        <Pane layoutX="787.0" layoutY="771.0" prefHeight="55.0" prefWidth="159.0" styleClass="pane_pharm" stylesheets="@../css/pharmacy.css" AnchorPane.leftAnchor="787.0" AnchorPane.rightAnchor="420.0">
+                           <children>
+                              <Button layoutX="7.0" layoutY="8.0" mnemonicParsing="false" onAction="#Print_Recept" prefHeight="39.0" prefWidth="168.0" stylesheets="@../css/pharmacy.css" text="Print Receipt" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="btn_action_1" />
+                                    <String fx:value="Button-hover" />
+                                    <String fx:value="Button-pressed" />
+                                 </styleClass>
+                              </Button>
+                              <Pane layoutX="-138.0" layoutY="31.0" prefHeight="2.0" prefWidth="140.0" style="-fx-background-color: green;" />
+                           </children>
+                        </Pane>
+                        <AnchorPane fx:id="panemain1" layoutX="87.0" layoutY="62.0" prefHeight="140.0" prefWidth="356.0" styleClass="pane_pharm" stylesheets="@../css/pharmacy.css">
+                           <children>
+                              <Label layoutX="14.0" layoutY="49.0" text="Drug/Medicine">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="tfpharmMedicine" focusColor="WHITE" labelFloat="true" layoutX="145.0" layoutY="32.0" maxWidth="218.0" minWidth="167.0" onKeyPressed="#validatemedName" prefHeight="45.0" prefWidth="192.0" promptText="Medicine Name">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                        </AnchorPane>
+                        <Pane layoutX="3.0" layoutY="411.0" prefHeight="406.0" prefWidth="361.0" styleClass="pane_pharm" stylesheets="@../css/pharmacy.css" AnchorPane.bottomAnchor="20.0">
+                           <children>
+                              <JFXTextArea fx:id="receipt" editable="false" focusColor="GREEN" layoutX="10.0" layoutY="29.0" maxWidth="351.0" minWidth="325.0" prefHeight="367.0" prefWidth="339.0">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font></JFXTextArea>
+                              <Text layoutX="22.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Receipt">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <JFXTextField fx:id="tfDate" editable="false" labelFloat="true" layoutX="1078.0" layoutY="413.0" maxWidth="207.0" minWidth="79.0" prefHeight="45.0" prefWidth="142.0" promptText="ksh 0.0">
+                           <font>
+                              <Font name="Bodoni MT" size="18.0" />
+                           </font></JFXTextField>
+                        <JFXTextField fx:id="MadicineName" editable="false" focusColor="WHITE" labelFloat="true" layoutX="523.0" layoutY="601.0" maxWidth="146.0" minWidth="102.0" prefHeight="39.0" prefWidth="116.0" promptText="Medicine">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font></JFXTextField>
+                        <JFXTextField fx:id="pricemedicine" editable="false" focusColor="WHITE" labelFloat="true" layoutX="763.0" layoutY="606.0" maxWidth="107.0" minWidth="64.0" prefHeight="45.0" prefWidth="69.0" promptText="Price">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font></JFXTextField>
+                        <JFXTextField fx:id="tfTotal" editable="false" focusColor="WHITE" labelFloat="true" layoutX="849.0" layoutY="605.0" maxWidth="147.0" minWidth="61.0" prefHeight="45.0" prefWidth="66.0" promptText="Total">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font></JFXTextField>
+                        <Spinner fx:id="SpnnerMedicineQuality" layoutX="665.0" layoutY="611.0" onMouseClicked="#Total_Amount" prefHeight="34.0" prefWidth="73.0" />
+                        <Pane layoutX="-2.0" layoutY="220.0" prefHeight="2.0" prefWidth="1369.0" style="-fx-background-color: green;" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-1.0" />
+                        <Label layoutX="871.0" layoutY="667.0" prefHeight="27.0" prefWidth="216.0" text="Total  Paid Amount A Day">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="873.0" layoutY="723.0" prefHeight="27.0" prefWidth="251.0" text="Unpaid Balance Amount A Day">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXComboBox fx:id="paymentMethod" layoutX="1126.0" layoutY="612.0" prefHeight="34.0" prefWidth="173.0" promptText="Payment method" style="-fx-background-color: #FD6E6A;" stylesheets="@../css/doctor.css">
+                           <styleClass>
+                              <String fx:value="cell" />
+                              <String fx:value="combo-box" />
+                           </styleClass></JFXComboBox>
+                        <JFXComboBox fx:id="PaymentStatus" layoutX="936.0" layoutY="620.0" prefHeight="31.0" prefWidth="157.0" promptText="Payment Status" style="-fx-background-color: #FD6E6A;" styleClass="cell" stylesheets="@../css/doctor.css" />
+                        <TableView fx:id="tableListItems" layoutX="434.0" layoutY="406.0" onMouseClicked="#tableList" prefHeight="161.0" prefWidth="357.0" stylesheets="@../css/purchase.css">
+                          <columns>
+                            <TableColumn fx:id="colMedName" prefWidth="182.0" style="-fx-alignment: center;" text="Medicine Name" />
+                            <TableColumn fx:id="colTotal" prefWidth="174.0" style="-fx-alignment: center;" text="Total Amount" />
+                          </columns>
+                        </TableView>
+                        <Label fx:id="cur_date" layoutX="1171.0" layoutY="-2.0" prefHeight="40.0" prefWidth="177.0">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="paidAmount" layoutX="1164.0" layoutY="649.0" text="000000" textFill="#0be32f">
+                           <font>
+                              <Font name="MT Extra" size="36.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="UnpaidAmount" layoutX="1163.0" layoutY="713.0" text="000000" textFill="#eb0c0c">
+                           <font>
+                              <Font name="MS Outlook" size="36.0" />
+                           </font>
+                        </Label>
+                        <Pane layoutX="518.0" layoutY="774.0" prefHeight="55.0" prefWidth="137.0" styleClass="pane_pharm" stylesheets="@../css/pharmacy.css">
+                           <children>
+                              <Button fx:id="btnList" layoutX="6.0" layoutY="8.0" mnemonicParsing="false" onAction="#Add_List" prefHeight="39.0" prefWidth="125.0" stylesheets="@../css/pharmacy.css" text="Add To List" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="btn_action_1" />
+                                    <String fx:value="Button-hover" />
+                                    <String fx:value="Button-pressed" />
+                                 </styleClass>
+                              </Button>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="1226.0" layoutY="793.0" prefHeight="2.0" prefWidth="163.0" style="-fx-background-color: green;" AnchorPane.rightAnchor="0.0" />
+                        <JFXTextField fx:id="MedBatchNo" editable="false" focusColor="WHITE" labelFloat="true" layoutX="393.0" layoutY="600.0" prefHeight="39.0" prefWidth="110.0" promptText="Batch No" unFocusColor="#222121">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXTextField>
+                        <Pane layoutX="1072.0" layoutY="767.0" prefHeight="55.0" prefWidth="158.0" styleClass="pane_pharm" stylesheets="@../css/pharmacy.css">
+                           <children>
+                              <Button layoutX="7.0" layoutY="8.0" mnemonicParsing="false" onAction="#clearfield" prefHeight="39.0" prefWidth="146.0" stylesheets="@../css/pharmacy.css" text="Refresh Fields" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="btn_action_1" />
+                                    <String fx:value="Button-hover" />
+                                    <String fx:value="Button-pressed" />
+                                 </styleClass>
+                              </Button>
+                              <Pane layoutX="-106.0" layoutY="31.0" prefHeight="2.0" prefWidth="108.0" style="-fx-background-color: green;" />
+                           </children>
+                        </Pane>
+                        <Label layoutX="3.0" layoutY="221.0" text="Paient Details">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </center>
+         <left>
+            <HBox prefHeight="100.0" prefWidth="280.0" styleClass="sales" stylesheets="@../css/pharmacy.css" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="844.0" prefWidth="280.0" styleClass="root" stylesheets="@../css/doctor.css" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Text fx:id="timedisplay" fill="WHITE" layoutX="47.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time" wrappingWidth="169.55078125" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="63.44921875" AnchorPane.topAnchor="6.1015625">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Text>
+                        <Pane layoutY="85.0" prefHeight="50.0" prefWidth="280.0" styleClass="task-header" stylesheets="@../css/pharmacy.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Text fill="WHITE" layoutX="21.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tasks">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Button layoutY="449.0" mnemonicParsing="false" onAction="#Stock" prefHeight="71.0" prefWidth="280.0" stylesheets="@../css/pharmacy.css" text="Stock" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="buttons" />
+                              <String fx:value="Button-hover-1" />
+                              <String fx:value="Button-pressed-1" />
+                           </styleClass>
+                        </Button>
+                        <Group layoutY="271.0" styleClass="Button-hover-1" stylesheets="@../css/pharmacy.css">
+                           <children>
+                              <Button layoutY="84.0" mnemonicParsing="false" onAction="#Show_Patient_And_Report" prefHeight="71.0" prefWidth="280.0" stylesheets="@../css/pharmacy.css" text="Patients">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="buttons" />
+                                    <String fx:value="Button-hover-1" />
+                                    <String fx:value="Button-pressed-1" />
+                                 </styleClass>
+                              </Button>
+                              <ImageView fitHeight="50.0" fitWidth="60.0" layoutX="33.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Icons/icons8_user_50px_2.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Group>
+                        <Group layoutY="172.0">
+                           <children>
+                              <Button layoutY="95.0" mnemonicParsing="false" onAction="#home" prefHeight="71.0" prefWidth="280.0" stylesheets="@../css/pharmacy.css" text="Pharmacy">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="buttons" />
+                                    <String fx:value="Button-hover-1" />
+                                    <String fx:value="Button-pressed-1" />
+                                 </styleClass>
+                              </Button>
+                              <ImageView fitHeight="42.0" fitWidth="50.0" layoutX="40.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Icons/icons8_pill_30px.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Group>
+                        <Group layoutY="380.0">
+                           <children>
+                              <Button layoutY="157.0" mnemonicParsing="false" onAction="#Admin_pane" prefHeight="71.0" prefWidth="279.0" stylesheets="@../css/pharmacy.css" text="Make Order">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="buttons" />
+                                    <String fx:value="Button-hover-1" />
+                                    <String fx:value="Button-pressed-1" />
+                                 </styleClass>
+                              </Button>
+                              <ImageView fitHeight="50.0" fitWidth="55.0" layoutX="33.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Icons/icons8_gold_bars_32px.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Group>
+                        <Button layoutY="717.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="71.0" prefWidth="280.0" stylesheets="@../css/pharmacy.css" text="Logout">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="buttons" />
+                              <String fx:value="Button-hover-1" />
+                              <String fx:value="Button-pressed-1" />
+                           </styleClass>
+                        </Button>
+                        <ImageView fitHeight="50.0" fitWidth="55.0" layoutX="34.0" layoutY="463.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/icons8_gold_bars_32px.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="45.0" fitWidth="55.0" layoutX="35.0" layoutY="734.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/icons8_exit_50px_2.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </left>
+      </BorderPane>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

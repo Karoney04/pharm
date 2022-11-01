@@ -1,0 +1,33 @@
+.bg-pane{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 0px 0px  0px  0px;
+}
+.pane_stock{
+    -fx-background-color: linear-gradient(to bottom right,#FD6E6A 16%,#FFC600 100%);
+    -fx-background-radius: 10px 10px  10px   10px;
+}
+.btn_search{
+    -fx-background-color: #000000;
+    font-size: 15px;
+    -fx-background-radius: 10px 10px  10px   10px;
+}
+.Button-hover:hover{
+  -fx-font-weight:bold;
+  -fx-background-color: white;
+  -fx-background-radius: 10px 10px  10px   10px;
+  -fx-font-size: 18;
+  -fx-text-fill: #000000;
+  -fx-border-color: #000000;
+  -fx-border-radius: 10px 10px  10px   10px;
+  -fx-border-width: 3;
+}
+.Button-pressed:pressed{
+  -fx-font-weight:bold;
+  -fx-background-color: white;
+  -fx-background-radius: 10px 10px  10px   10px;
+  -fx-font-size: 18;
+  -fx-border-color: green;
+  -fx-border-radius: 10px 10px  10px   10px;
+  -fx-border-width: 3;
+   
+}
